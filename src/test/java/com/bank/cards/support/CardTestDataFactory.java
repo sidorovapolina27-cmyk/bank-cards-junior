@@ -1,0 +1,50 @@
+package com.bank.cards.support;
+
+import com.bank.cards.card.Card;
+import com.bank.cards.card.CardDto;
+import com.bank.cards.card.CardStatus;
+import com.bank.cards.card.CardType;
+import com.bank.cards.card.PaymentSystem;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+/**
+ * Тестовая фабрика сущностей и дто.
+ * Изменять этот класс можно только тогда, когда этого требует сигнатура
+ * продакшен-классов. Сами тесты не трогать.
+ */
+public final class CardTestDataFactory {
+
+    private CardTestDataFactory() {
+    }
+
+    /** Картa по умолчанию — дебетовая «Мир», активная, срок 2025–2030. */
+    public static Card.CardBuilder aCard() {
+        return Card.builder()
+                .clientId(1001L)
+                .pan("2200000000009999")
+                .cardHolderName("IVAN IVANOV")
+                .cardType(CardType.DEBIT)
+                .paymentSystem(PaymentSystem.MIR)
+                .status(CardStatus.ACTIVE)
+                .validFrom(LocalDate.of(2025, 1, 1))
+                .validTo(LocalDate.of(2030, 1, 1))
+                .productName("Карта Классическая")
+                .createdAt(LocalDateTime.of(2025, 1, 1, 12, 0));
+    }
+
+    /** Ожидаемое дто карты 2001 из сида. */
+    public static CardDto ivanovMainCardDto() {
+        return new CardDto(
+                2001L,
+                1001L,
+                "2200000000001001",
+                CardType.DEBIT,
+                PaymentSystem.MIR,
+                CardStatus.ACTIVE,
+                LocalDate.of(2024, 3, 1),
+                LocalDate.of(2029, 3, 1)
+        );
+    }
+}
