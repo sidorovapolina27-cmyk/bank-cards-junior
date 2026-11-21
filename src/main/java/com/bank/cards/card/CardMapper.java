@@ -19,8 +19,9 @@ public class CardMapper {
                 card.getCardType(),
                 card.getPaymentSystem(),
                 card.getStatus(),
+                card.getValidFrom(),
                 card.getValidTo(),
-                card.getValidFrom()
+                card.getProductName()
         );
     }
 

@@ -36,11 +36,13 @@ public class CardSeedLogger implements ApplicationRunner {
                     card.getId(),
                     card.getClientId(),
                     card.getPan(),
+                    card.getCardHolderName(),
                     card.getCardType(),
                     card.getPaymentSystem(),
                     card.getStatus(),
                     card.getValidFrom(),
-                    card.getValidTo()
+                    card.getValidTo(),
+                    card.getProductName()
             );
             log.info("Сид-карта: {}", dto);
         }

@@ -40,11 +40,13 @@ public final class CardTestDataFactory {
                 2001L,
                 1001L,
                 "2200000000001001",
+                "IVAN IVANOV",
                 CardType.DEBIT,
                 PaymentSystem.MIR,
                 CardStatus.ACTIVE,
                 LocalDate.of(2024, 3, 1),
-                LocalDate.of(2029, 3, 1)
+                LocalDate.of(2029, 3, 1),
+                "CREDIT"
         );
     }
 }
