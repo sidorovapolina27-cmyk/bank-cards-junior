@@ -22,6 +22,7 @@ public class CardService {
     }
 
     public List<CardDto> getCardsByClient(long clientId) {
-        throw new UnsupportedOperationException("Не реализовано: задание 1.3");
+        List<Card> cards = cardRepository.findByClientIdOrderByIdAsc(clientId);
+        return cardMapper.toDtoList(cards);
     }
 }

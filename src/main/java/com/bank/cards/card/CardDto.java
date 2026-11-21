@@ -25,4 +25,5 @@ public class CardDto {
     private final CardStatus status;
     private final LocalDate validFrom;
     private final LocalDate validTo;
+    private final String productName;
 }
